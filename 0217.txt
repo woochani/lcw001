@@ -1,0 +1,72 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> = 반응형 웹
+
+camel case =  단어+ 단어 = 2번째 단어의 시작은 대문자
+
+<meta http-equiv="refresh" - 새로고침
+
+<head tag = 주요 선언문이 들어감.
+<title> 만 눈에 보임.
+
+태그의 의미를 활용한 사용이 중요함 = 시멘틱태그
+header: 상단
+-로고, 개인화기능(로그인, 장바구니, 검색)
+footer: 하단
+-사업자번호, 통신판매번호, 운영담당자, 주소, 저작권에 대한 표시
+nav: 메뉴바
+section: 장, 큰 목차
+article: 절, 작은 목차
+aside: 본문과 떨어진 내용
+-배너, 광고, 공지
+
+로봇, AI의 시대에 맞춰서 의미론적 시멘틱태그를 활용하면 좋겠다.
+
+10vw = 글자 한 개가 가로 넓이 기준 10%를 차지한다.
+-기본값을 버리고 보다 강조하고자 할 때
+-반응형 폰트 사이즈를 원할 때
+
+모든 폰트 기본 사이즈 = 16px
+h1 사이즈 = 32px
+
+반응형웹 = media quiries
+-divice 출력장치, screen, printer
+-웹문서의 사이즈를 실시간으로 조정함
+-하나의 소스로 모든 디바이스(장치)를 만족시켜줌.
+
+적응형웹 
+-스크립트를 이용해서 접속자의 디바이스를 파악함
+-그리고나서 해당문서로 연결시켜줌
+-pc용 문서 작업, mobile용 문서작업, tablit용 문서작업
+
+float
+-block요소만큼 가로정렬 + 콘텐츠만큼 크기
+
+미디어쿼리 = 반응형웹
+@media screen and(★공백) (조건문, 창사이즈)
+{원하는 셋팅}
+
+★
+max-width: 최대 가로사이즈가 ~이하일 때
+min-width: 최소 가로사이즈가 ~이상일 때
+
+1. pc버전: 기본소스가 pc버전으로 제작
+2. tablit버전: 1024px 이하
+3. mobile버전: 360px 이하
+
+[인터넷 >> 웹]
+-웹 protocol 규약, 약속, 룰
+HTTP
+TCP/IP
+FTP (파일전송)
+SMTP (메일전송)
+-> 총 합쳐서 인터넷이라 부름.
+
+form type (주로 사용)
+1. button
+2. checkbox
+3. text
+4. radio
+
+form=block, label=inline, input=linline
+-input은 예외적으로 width, height 적용 가능
+
+
