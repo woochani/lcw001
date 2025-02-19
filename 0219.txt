@@ -1,0 +1,63 @@
+cdn: 네트워크상에서 언제든지 가져다 사용하는 방식
+ex) 웹폰트, 웹아이콘, jQuery
+타인의 것을 자유롭게 가져다 사용하는 추세
+->속도, 서비스종료 등으로 인해서 본인 것으로 만들어서 사용하는 것이 안전하다.
+
+icon = text / svg = img
+
+class = "apple peach"
+.apple도 가능, .peach도 가능
+
+alt+shift+'F' = 전체 정리
+
+tetx-align: 좌우 정렬 (수평)
+vertical-align: 상하 정렬 (수직)
+
+1.block 요소
+<div>
+<h1> - <h6>
+<p>
+<form>
+<header>
+<footer>
+<section>
+
+2.inline 요소
+<span>
+<a>
+<img>
+
+display: none; = 값 숨기기 (숨겨진위치 포함)
+visibility: hidden; = 값 숨기기 (숨겨진위치 유지)
+div:hover p{display: block;}  / div:hover section{visibility: visible;}
+-> 숨겨진 div에 마우스를 올려놓으면 보임
+
+max-width: 최대넓이 ~이하 (~보다 커질 수 없다)
+min-width: 최소넓이 ~이상 (~보다 작아질 수 없다)
+
+★Position (기본: static)
+1.relative: 상대값
+-기준점: 본인 현재위치
+2.absolute: 절대값
+-하늘로 뜬다, 대열에서 이탈
+-width값이 사라짐, contents만큼의 사이즈를 가짐.
+-부모를 기준으로 위치가 결정됨.
+-부모는 position속성(relative)을 가져야함. (속성이 없을 시 window, screen이 부모가 됨.)
+3.fixed: 완전고정
+
+->position속성을 주면 추가로 가능한 작업
+ㄱ. left, right, top, bottom 값을 줄 수 있음.
+ㄴ. z-index (앞 뒤) ->position속성 필요
+- 기본값 0 (-n ~ n)
+
+opcity: 투명도 (0일수록 투명함)
+
+p:nth-of-type(3){left: 325.5px;top: 300px;} ?
+p:nth-of-type(3){left:50%; top:50%;} (왼쪽 꼭짓점 기준)
+p:nth-of-type(3){left: 50%; top:50%; margin-left: -75px;margin-bottom: -50px;} O
+
+★텍스트 수직 중앙 정렬법
+display: table-cell(자식) -> display:table(부모) -> vertical-align:middle(자식)
+
+alt+shift+'A' = 선택한 문구만 주석처리
+html, body = width 100% 지만 height는 없음.
