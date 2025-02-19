@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 1000px;
+            height: 400px;
+            margin: auto;
+            border: 1px solid orange;
+            position: relative;
+        }
+
+        h1 {
+            background-color: skyblue;
+            position: relative;
+            top: 20px;
+            left: 30px;
+            z-index: -10;
+        }
+
+        p {
+            background-color: pink;
+            height: 80px;
+            position: absolute;
+            right: 0;
+            top: 80px;
+            z-index: 11;
+        }
+
+        section {
+            background-color: cornflowerblue;
+            height: 100px;
+            z-index: 10;
+            position: relative;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>position</h1>
+        <p>position속성을 적용하면 추가로 부여할 수 있는 다양한 기능이 생성된다.</p>
+        <section>나는 p태그 아레에 있는 콘텐츠...</section>
+    </div>
+</body>
+
+</html>
