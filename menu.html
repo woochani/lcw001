@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴</title>
+    <style>
+        *{margin: 0;padding: 0; box-sizing: border-box;}
+        ul{list-style: none;}
+        a{text-decoration: none;}
+
+        .mom{width: 1000px; padding: 100px; border-radius: 10px 20px;}
+        .mom >li{border: 1px solid #333;float: left;
+                width: 130px;text-align: center;line-height: 10px;
+                
+        }
+        .mom >li >a{color: #333; display: block; padding: 15px;}
+        .mom >li >a:hover{background-color: #efefef;}
+        .mom >li:nth-child(2):hover .son{display: block;}
+        .mom >li:nth-child(2):hover{background-color: #efefef;}
+
+
+        .son{position: absolute;background-color: white;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5); display: none; margin-top: 5px;}
+        .son li a{display: block;padding: 10px 25px;color: black;}
+        .son li a:hover{color: pink;}
+    </style>
+</head>
+<body>
+    <ul class="mom">
+        <li><a href="#">공지사항</a></li>
+        <li><a href="#">도서 목록 ▼</a>
+            <ul class="son">
+                <li><a href="#">Do it! 시리즈</a></li>
+                <li><a href="#">업무 능력 필독서</a></li>
+                <li><a href="#">바빠 학습법 시리즈</a></li>
+            </ul>
+        </li>
+        <li><a href="#">게시판</a></li>
+    </ul>
+</body>
+</html>
