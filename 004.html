@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지션</title>
+    <style>
+        div{width: 200px; height: 100px; background-color: blue; opacity: 0.3;
+            transition: all 2s;}
+        div:hover{width: 300px; opacity: 0.8;}
+        section{float: left;}
+        .box1{width: 300px; height: 300px; border: 2px solid red; margin: 100px; perspective: 300px;}
+        .box1 article{background-color: yellow; line-height: 300px; font-size: 60px;
+                overflow: hidden; text-overflow: ellipsis; transition: all 2s ease-in-out; transform-origin: left center;}
+        .box1 article:hover{transform: rotateY(45deg); transform-origin: left center;}
+
+        .box2{width: 300px; height: 300px; border: 2px solid green; margin: 100px; perspective: 300px;}
+        .box2 article{background-color: lightblue; line-height: 300px; font-size: 70px;
+                    overflow: hidden; text-overflow: ellipsis; transition: all 2s; transform-origin: left top;}
+        .box2 article:hover{transform: rotateX(-50deg); transform-origin: left top;}
+    </style>
+</head>
+<body>
+    <div></div>
+    <section class="box1">
+        <article>SonHeungMin</article>
+    </section>
+    
+    <section class="box2">
+        <article>KimMinJae</article>
+    </section>
+</body>
+</html>
