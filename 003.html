@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        html, body{border: 1px solid #ccc; height: 100%;}
+        .box1{padding: 0; list-style: none; border: 2px solid red; display: flex;
+            justify-content: space-between;} 
+        .box1 li{width: 100px; height: 30px; border: 1px solid blue; margin: 10px;}
+
+        .box2{border: 1px solid red; height: 50%; padding: 0; list-style: none;
+                display: flex; justify-content: center; align-content: center;
+                flex-wrap: wrap;}
+        .box2 li{width: 100px; height: 50px; border: 2px solid blue; margin: 10px;
+                display: flex; justify-content: center; align-items: center;}
+    </style>
+</head>
+<body>
+    <ul class="box1">
+        <li>box1</li>
+        <li>box2</li>
+        <li>box3</li>
+        <li>box4</li>
+    </ul>
+    <ul class="box2">
+        <li>box1</li>
+        <li>box2</li>
+        <li>box3</li>
+        <li>box4</li>
+        <li>box1</li>
+        <li>box2</li>
+        <li>box3</li>
+        <li>box4</li>
+        <li>box1</li>
+        <li>box2</li>
+        <li>box3</li>
+        <li>box4</li>
+    </ul>
+</body>
+</html>

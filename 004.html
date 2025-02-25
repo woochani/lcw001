@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 입문1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('div').click(function(){
+            //     $(this).hide(3000);
+            // });
+            $('li:nth-child(1)').on('click',function(){
+                $('.box1').show(500);
+            });
+            $('li').eq(1).on('click',function(){
+                $('.box1').hide('fast');
+            });
+            $('li').eq(2).click(function(){
+                $('.box2').fadeIn();
+            });
+            $('li').eq(3).click(function(){
+                $('.box2').fadeOut();
+            });
+            $('li').eq(4).click(function(){
+                $('.box3').toggle(function(){
+                    $('.box2').fadeToggle();
+                });
+            });
+        });
+    </script>
+    <style>
+        div{width: 500px; height: 200px; background-color: beige; border: 2px solid red; float: left;}
+        ul{clear: both;}
+        li{width: 100px; height: 30px; border: 1px solid red; float: left; margin: 10px;}
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <ul>
+        <li><a href="#">show</a></li>
+        <li><a href="#">hide</a></li>
+        <li><a href="#">fadeIn</a></li>
+        <li><a href="#">fadeOut</a></li>
+        <li><a href="#">toggle</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹1</title>
+    <style>
+        /* pc버전에 대한 스타일 코딩 */
+        body{background-color: #ccc;}
+        h1{background-color: blue; opacity: 0.5; border: 3px solid red;
+            margin: auto; width: 60%; height: 150px;}
+
+        /* tablet버전 */
+        @media all and (max-width: 768px){
+            body{background-color: lightblue;}
+            h1{width: 80%;}
+        }
+        /* mobile버전 */
+        @media all and (max-width: 360px){
+            body{background-color: aquamarine;}
+            h1{width: 100%; overflow: auto;}
+        }
+    </style>
+</head>
+<body>
+    <h1>미디어의 화면사이즈에 따라서 반응하는 웹 문서</h1>
+</body>
+</html>
