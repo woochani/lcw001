@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate 2</title>
+    <style>
+        body{background-color: #333;}
+        #box{width: 500px; height: 500px; border: 1px solid red; margin: 200px auto; text-align: center;}
+        #tank{width: 168px; height: 428px; margin: auto; position: relative; z-index: -10;}
+        p{width: 100px; height: 40px; border: 1px solid red; text-align: center;
+            line-height: 40px; display: inline-block; cursor: pointer; background-color: #ccc;}
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            // 변수선언.. 변수 : 변하는 수.. 누군가 기준값을 가지고 있어야 한다.
+            // 변수/상수
+            var h = 0;
+            var v = 0;
+            var interval;
+            var degree = 0;
+            // $('.left').on('click', function(){
+            //     $('#tank').animate({left: h -= 10}, 10, 'swing');
+            // });
+            // $('.right').on('click', function(){
+            //     $('#tank').animate({left: h += 10}, 10, 'swing');
+            // });
+            // $('.up').on('click', function(){
+            //     $('#tank').animate({top: v -= 10}, 10, 'swing');
+            // });
+            // $('.down').on('click', function(){
+            //     $('#tank').animate({top: v += 10}, 10, 'swing');
+            // });
+
+            // 함수선언.. 명령을 기록해서 원할때 불러서 바로사용..
+            // 전역함수
+            function left() {
+                $('#tank').animate({left: h -= 10}, 10, 'swing');
+            }
+            function right() {
+                $('#tank').animate({left: h += 10}, 10, 'swing');
+            }
+            function up() {
+                $('#tank').animate({top: v -= 10}, 10, 'swing');
+            }
+            function down() {
+                $('#tank').animate({top: v += 10}, 10, 'swing');
+            }
+            function turnL() {
+                degree--;
+                $('#tank').css({transform: 'rotate(' +degree+ 'deg)'});
+            }
+            function turnR() {
+                degree++;
+                $('#tank').css({transform: 'rotate(' +degree+ 'deg)'});
+            }
+
+
+            $('.left').mousedown(function(){
+                interval = setInterval(function(){left();}, 50);
+            }).mouseup(function(){
+                clearInterval(interval);
+            }).mouseleave(function(){
+                clearInterval(interval);
+            });
+            
+            $('.right').mousedown(function(){
+                interval = setInterval(function(){right();}, 50);
+            }).mouseup(function(){
+                clearInterval(interval)
+            }).mouseleave(function(){
+                clearInterval(interval);
+            });
+
+            $('.up').mousedown(function(){
+                interval = setInterval(function(){up();}, 50);
+            }).mouseup(function(){
+                clearInterval(interval)
+            }).mouseleave(function(){
+                clearInterval(interval);
+            });
+
+            $('.down').mousedown(function(){
+                interval = setInterval(function(){down();}, 50);
+            }).mouseup(function(){
+                clearInterval(interval)
+            }).mouseleave(function(){
+                clearInterval(interval);
+            });
+
+            $('.turnL').mousedown(function(){
+                interval = setInterval(function(){turnL();}, 50);
+            }).mouseup(function(){
+                clearInterval(interval)
+            }).mouseleave(function(){
+                clearInterval(interval);
+            });
+
+            $('.turnR').mousedown(function(){
+                interval = setInterval(function(){turnR();}, 50);
+            }).mouseup(function(){
+                clearInterval(interval)
+            }).mouseleave(function(){
+                clearInterval(interval);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div id="tank"><img src="images/tank.png"></div>
+        <p class="left">left</p>
+        <p class="right">right</p>
+        <p class="up">up</p>
+        <p class="down">down</p><br><br>
+        <p class="turnL">turnL</p>
+        <p class="turnR">turnR</p>
+    </div>
+</body>
+</html>
