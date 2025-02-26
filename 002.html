@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 예제</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        a{text-decoration: none; color: #333;}
+        ul{list-style: none;}
+
+        .menu{width: 200px; height: 150px; margin-left: 30px;}
+        .menu li{height: 50px; border: 1px solid #ccc; text-align: center; line-height: 50px;}
+        .menu li:hover{background-color: #efefef;}
+        .btn{width: 200px; height: 50px; border: 1px solid #ccc; border-radius: 0 0 10px 10px;
+            margin-left: 30px; position: relative;}
+        .btn a{display: block; text-indent: 60px; line-height: 50px;}
+        .btn img{position: absolute; right: 50px; top: 15px;}
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.menu').slideUp('fast');
+            $('.btn').on('click', function(){
+                $('.menu').slideToggle(function(){
+                    if ($('.menu').css('display') == 'none') {
+                        $('.btn a').text('Open');
+                        $('.btn img').attr('src', 'images/down.png');
+                    }else{
+                        $('.btn a').text('Close');
+                        $('.btn img').attr('src', 'images/up.png');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Naver</a></li>
+            <li><a href="#">Daum</a></li>
+            <li><a href="#">Google</a></li>
+        </ul>
+    </div>
+    <div class="btn">
+        <a href="#">Open</a> <img src="images/down.png">
+    </div>
+</body>
+</html>
