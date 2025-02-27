@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영상콘텐츠</title>
+    <style>
+        .box{border: 1px solid #ccc; text-align: center;}
+        video{border: 1px solid red;}
+        ul{list-style: none; padding: 0; width: 800px; margin: auto;}
+        li{display: inline-block; width: 150px; height: 50px; cursor: pointer;
+            font-size: 25px; font-weight: bold; border: 2px solid red; text-align: center; line-height: 50px;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+        var vid = $('video').get(0);
+
+            $('.play').click(function(){
+                vid.play();
+            });
+            $('.stop').click(function(){
+                vid.pause();
+                vid.currentTime = 0;
+                // .stop()메서드는 애니에서만 사용가능. (비디오 불가)
+            });
+            $('.pause').click(function(){
+                vid.pause();
+            });
+            $('.muted').click(function(){
+                vid.muted = true;
+            });
+            $('.mute_off').click(function(){
+                vid.muted = false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <video autoplay muted loop>
+            <source src="images/mov.mp4" type="video/mp4">
+        </video>
+    </div>
+    <ul>
+        <li class="play">play</li>
+        <li class="stop">stop</li>
+        <li class="pause">pause</li>
+        <li class="muted">muted</li>
+        <li class="mute_off">mute off</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aside open&close</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        body{background-color: #656565;}
+        header{background-color: white; height: auto; border: 1px solid red;}
+        header h1{width: 1000px; height: 100px; margin: 10px auto; padding-left: 20px; line-height: 100px;
+                  border: 1px solid #ccc; margin-top: 10px;}
+        main{height: 600px;}
+        footer{}
+        footer small{display: block; width: 100%; border: 1px solid #ccc; padding: 20px;
+                    text-align: center;}
+
+        aside{background-color: rgba(0, 0, 0, 0.7); width: 350px; height: 100%;
+                position: fixed; top: 0; left: -350px; /* transition: all 0.5s ease-in; */}
+        /* .open{left: 0;} */
+        aside ul{list-style: none; border: 1px solid red; position: absolute;
+                    top: 50px; left: 114px;}
+        ul li{margin: 0 0 20px;}
+        aside button{background-color: rgba(0, 0, 0, 0.7); display: block; position: absolute;
+                    top: 180px; left: 350px; width: 52px; height: 132px;
+                    border: none; cursor: pointer;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            var duration = 300;
+            var aside = $('aside');
+            var button = aside.find('button');
+
+            button.on('click', function(){
+                aside.toggleClass('open');
+                if (aside.hasClass('open')) {
+                    aside.animate({left:'-70px'},duration,'easeOutBounce');
+                    button.find('img').attr('src', 'images/btn_close.png');
+                }else{
+                    aside.animate({left:'-350px'},duration,'easeInOutBounce');
+                    button.find('img').attr('src', 'images/btn_open.png');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Creative jQuery</h1>
+    </header>
+    <main>
+        <aside>
+            <ul>
+                <li><a href="#"><img src="images/01_aside.png"></a></li>
+                <li><a href="#"><img src="images/02_aside.png"></a></li>
+                <li><a href="#"><img src="images/03_aside.png"></a></li>
+            </ul>
+            <button><img src="images/btn_open.png"></button>
+        </aside>
+    </main>
+    <footer>
+        <small>copyright all right reserved. &copy;woochan company.</small>
+    </footer>
+</body>
+</html>
