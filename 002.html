@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append, prepend</title>
+    <style>
+        div{width: 300px; height: 50px; padding: 10px; border: 1px solid #ccc;
+            margin: 10px; border-radius: 5px;}
+        .box{width: 500px; height: auto; border-radius: 0; background-color: burlywood;}
+        .box2{width: 500px; height: auto; border-radius: 0; border: 1px solid red;}
+        .apple{background-color: red;}
+        .banana{background-color: yellow;}
+        .orange{background-color: orange;}
+        .mango{background-color: gold}
+        p{width: 200px; height: 30px; text-align: center; line-height: 30px; border: 2px solid red;
+            margin: 10px; cursor: pointer; display: inline-block;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var basket = $('.box');
+            var apple = $('.apple');
+            var banana = $('.banana');
+            var orange = $('.orange'), mango = $('.mango');
+            var img = $('<img src="images/01_aside.png" alt="튤립">');
+
+            $('p:nth-of-type(1)').on('click', function(){
+                basket.append(apple);
+            });
+            // 기존콘텐츠 뒤에 담는다
+            $('p:nth-of-type(2)').on('click', function(){
+                banana.appendTo(basket);
+            });
+            // 기존콘텐츠 뒤에 담는다 (목적지가 뒤로 보내짐)
+            $('p:nth-of-type(3)').on('click', function(){
+                basket.prepend(orange);
+            });
+            $('p:nth-of-type(4)').on('click', function(){
+                mango.prependTo(basket);
+            });
+            $('p:nth-of-type(5)').on('click', function(){
+                basket.append(img);
+            });
+            $('p:nth-of-type(6)').on('click', function(){
+                $('.box2').append(apple, banana, orange, mango);
+                img.remove();
+                //.empty() 기존콘텐츠까지 삭제
+                //.remove() 지울대상을 지정 후 삭제
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box">나는 과일을 담을 박스</div>
+    <div class="box2"> 
+        <div class="apple">apple</div>
+        <div class="banana">banana</div>
+        <div class="orange">orange</div>
+        <div class="mango">mango</div>
+    </div>
+    <p>apple</p>
+    <p>banana</p>
+    <p>orange</p>
+    <p>mango</p>
+    <p>img</p>
+    <p>처음 그대로...</p>
+</body>
+</html>

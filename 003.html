@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사과옮기기</title>
+    <style>
+        .box1, .box2{width: 600px; height: 200px; border: 3px solid red;
+                    border-radius: 10px; padding: 20px;}
+        .btn1, .btn2{width: 150px; height: 30px; border: 1px solid #333; color: white;
+                    background-color: #aaa; display: block; cursor: pointer; text-align: center; line-height: 30px;}
+        .apple{width: 100px; height: 100px; background-color: red; border-radius: 50%; color: white;
+                text-align: center; line-height: 100px;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var apple = $('.apple');
+            
+            $('.btn1').on('click', function(){
+                $('.box1').append(apple);
+            });
+            $('.btn2').on('click', function(){
+                $('.box2').append(apple);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <p class="btn2">박스2로 옮기기</p>
+    <div class="box2">box2
+        <p class="apple">apple</p>
+    </div>
+    <p class="btn1">박스1로 옮기기</p>
+</body>
+</html>
