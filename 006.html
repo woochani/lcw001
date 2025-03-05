@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드바 만들기+</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <style>
+        section{position: fixed; z-index: 2; width: 1000px; height: 420px; /* border: 1px solid red; */
+                left: 50%; top: 50%; transform: translate(-50%, -50%); overflow: hidden;}
+        section img{width: 100%; height: auto; position: absolute;}
+        #slider{width: 500px; border: 1px solid red; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 300px);}
+        .box{width: 300px; height: 50px; border: 1px solid red; margin: auto;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            var imgs = '';
+            for(var i=0; i<201; i++){
+                imgs += '<img src="img/pic'  +i+  '.jpg">' 
+            }
+            $('section').html(imgs);
+
+            $('#slider').slider({
+                range: '',
+                min: 0,
+                max: 200,
+                value: 0,
+                orientation: 'horizontal', 
+                Animation: 'slow',
+                slide: function(event, ui){
+                    $('#value').val(ui.value);
+                    var dw = ui.value
+                    $('section img').hide();
+                    $('section img').eq(dw).show();  
+                }
+            });
+
+            $('section').on('mousemove', function(a){
+                var x = a.offsetX;
+                var y = a.offsetY;
+                var win = $('section').width();
+                var percent = Math.floor((x/win)*201);
+                $('section img').hide();
+                $('section img').eq(percent).show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>슬라이드바를 만들자</p>
+    <p>슬라이드바가 움직일 때 그 값을 받아오자</p>
+    <section>
+        <img src="img/pic0.jpg">
+    </section>
+    <div id="slider"></div>
+    <div class="box">
+        <input type="text" id="value">
+    </div>
+</body>
+</html>
