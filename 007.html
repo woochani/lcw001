@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>떠오르는 신예 그룹을 소개합니다</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        html, body {height: 100%; margin: 0; background-color: rgb(41, 156, 249); overflow: hidden;}
+        body{font-family: Nanum Pen Script;}
+        p{font-size: 80px; margin-top: 50px; margin-left: 10px;}
+        .p2{font-size: 30px;}
+        section{position: fixed; z-index: 2; width: 1000px; height: 550px;
+                left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 25px; overflow: hidden;}
+        section img{width: 100%; height: auto; position: absolute;}
+        #slider{width: 500px; ; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 330px);}
+        .box{width: 300px; height: 50px; position: relative; z-index: 5; bottom: 20px; margin-left: 710px;
+            margin-top: 530px; } 
+            .tag {position: absolute; top: 350px; left: 200px; transform: translateX(-50%); 
+                z-index: 10; padding: 10px; background: rgba(255, 255, 255, 0.7); opacity: 0.9; border-radius: 5px;}
+            .tag a{color: #222; font-size: 30px; text-decoration: none;}
+            .tag a:hover{color: olive}
+            /* #logo { position: fixed; top: 50%; right: 20px; transform: translateY(-50%); width: 150px;} */
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            var imgs = '';
+            for(var i=0; i<245; i++){
+                imgs += '<img src="boys/boys'  +i+  '.jpg">' 
+            }
+            $('section').html(imgs);
+
+            $('#slider').slider({
+                range: '',
+                min: 0,
+                max: 244,
+                value: 0,
+                orientation: 'horizontal', 
+                Animation: 'slow',
+                slide: function(event, ui){
+                    $('#value').val(ui.value);
+                    var dw = ui.value
+                    $('section img').hide();
+                    $('section img').eq(dw).show();  
+                }
+            });
+
+            $('section').on('mousemove', function(a){
+                var x = a.offsetX;
+                var y = a.offsetY;
+                var win = $('section').width();
+                var percent = Math.floor((x/win)*244);
+                $('section img').hide();
+                $('section img').eq(percent).show();
+            });
+        });
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Orbit&family=Orbitron:wght@400..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
+</head>
+<body>
+    <p style="font-size: 80px;">BOYNEXTDOOR</p>
+    <p class="p2">★슬라이드를 이용하여 원하는 구간을 확인하세요!★</p>
+    <!-- <img src="boys/logo.jpg" id="logo" alt="BOYNEXTDOOR Logo"> -->
+    <section>
+        <img src="boys/boys0.jpg">
+    </section>
+    <div id="slider"></div>
+    <div class="box">
+        <input type="text" id="value">
+    </div>
+    <div class="tag">
+    <a href="https://youtu.be/YVNFBIpp-38?si=z3KW5vJOsl1o0hHk" target="_blank">원본 영상을 보고 싶다면? (click!)</a>
+    </div>
+</body>
+</html>
