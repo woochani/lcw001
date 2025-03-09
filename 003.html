@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>묭묭묭묭묭묭묭묭묭묭묭묭</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&family=Orbit&family=Orbitron:wght@400..900&family=Shizuru&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        *{margin: 0; padding: 0;}
+        body{font-size: 17px; font-family: 'Jua', sans-serif; background-color: beige; color: plum;}
+        
+        ul li{margin-bottom: 10px;}
+        ul li a{text-decoration: none; padding: 5px 0; font-size: 17px; text-align: center; display: block;}
+        
+        #wrap{width: 1000px; margin: auto;}
+        h2{position: fixed; top: 10px; left: 20px; color: #bbb; font-size: 30px;}
+        nav{position: fixed; right: 50px; top: 50%; transform: translateY(-50%);}
+        li{margin: 0;}
+        li a{display: block;}
+        li a.on{/* background-color: yellow; border-radius: 20px; width: 100px; */ text-align: center; font-size: 19px;}
+
+        #content{position: relative; right: 30%;}
+        section{padding: 100px 10px 0; /* border: 1px solid red; */ position: absolute; /* opacity: 0.1; */ transition: all 0.5s ease-in;
+                width: 1000px; height: 300px;}
+        section h1{font-size: 60px; margin-bottom: 40px;}
+        section#sec1{top: 0; }
+        section#sec2{top: 900px;}
+        section#sec3{top: 1800px;}
+        section#sec4{top: 2700px; height: 1500px;}
+        #sec1.on{opacity: 1;}
+        #sec2.on{opacity: 1;}
+        #sec3.on{opacity: 1;}
+        #sec4.on{opacity: 1;}
+        
+        #logo2, #logo3, #logo4{display: none;}
+        #logo1{top: 0px; position: absolute; left: 65%;}
+        #logo2{top: 900px; position: absolute; left: 65%;}
+        #logo3{top: 1800px; position: absolute; left: 65%;}
+        #logo4{top: 2700px; position: absolute; left: 65%;}
+        
+        #phone{position: absolute; top: 950px; left: 33%; z-index: 10; transition: all 1s ease;
+            animation: rotateImage 3s linear infinite;}
+        #phone.on{top: 1830px; left: 45%;}
+        #phone.on2{top: 2750px; left: 23%;}
+
+        @keyframes rotateImage { 0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);}}
+    </style>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <script>
+        $(function () {
+            $(window).on('scroll', function () {
+                var ab = $(this).scrollTop();
+                $('h2').text(ab);
+            });
+
+            $('html, body').animate({scrollTop: 0}, 50);
+
+            // 버튼클릭을 통한 이동 시 버튼 ON!
+            $('.menu1').click(function () {
+                $('html,body').animate({scrollTop: 0}, 1000, 'swing');
+                $('li a').removeClass('on');
+                $(this).addClass('on');
+            });
+            
+            $('.menu2').click(function () {
+                $('html,body').animate({scrollTop: 900}, 1000, 'swing');
+                $('li a').removeClass('on');
+                $(this).addClass('on');
+                $('#logo2').fadeIn(2000);
+            });
+           
+            $('.menu3').click(function () {
+                $('html,body').animate({scrollTop: 1800}, 1000, 'swing');
+                $('li a').removeClass('on');
+                $(this).addClass('on');
+                $('#logo3').fadeIn(2000);
+            });
+            
+            $('.menu4').click(function () {
+                $('html,body').animate({scrollTop: 2700}, 1000, 'swing');
+                $('li a').removeClass('on');
+                $(this).addClass('on');
+                $('#logo4').fadeIn(2000);
+            });
+
+            // 스크롤을 통한 이동 시 버튼 ON!
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop() <= 899) {
+                    $('li a').removeClass('on');
+                    $('.menu1').addClass('on');
+                    $('section').removeClass('on');
+                    $('#sec1').addClass('on');
+                
+                } else if($(window).scrollTop() <= 1799) {
+                    $('li a').removeClass('on');
+                    $('.menu2').addClass('on');
+                    $('section').removeClass('on');
+                    $('#sec2').addClass('on');
+                    $('#logo2').fadeIn(2000);
+                    
+                
+                } else if($(window).scrollTop() <= 2699) {
+                    $('li a').removeClass('on');
+                    $('.menu3').addClass('on');
+                    $('section').removeClass('on');
+                    $('#sec3').addClass('on');
+                    $('#logo3').fadeIn(2000);
+                
+                } else if($(window).scrollTop() >= 2700) {
+                    $('li a').removeClass('on');
+                    $('.menu4').addClass('on');
+                    $('section').removeClass('on');
+                    $('#sec4').addClass('on');
+                    $('#logo4').fadeIn(2000);
+                }
+
+
+
+                // iphone의 조건문
+                if ($(window).scrollTop() <= 900) {
+                    $('#phone').removeClass();
+                
+                } else if ($(window).scrollTop() > 1700 && $(window).scrollTop() <= 2600) {
+                    $('#phone').addClass('on');
+                    $('#phone').removeClass('on2');
+                
+                } else if ($(window).scrollTop() > 2600) {
+                    $('#phone').addClass('on2');
+                    $('#phone').removeClass('on');
+                }
+            });
+            
+            // 강제로 이벤트를 적용하는 방법
+            $(window).trigger('scroll');
+        });
+     </script>
+</head>
+<body>
+    <div id="wrap">
+        <h2>0</h2>
+        <nav>
+            <ul>
+                <li><a href="#sec1" class="menu1">Aimyon</a></li>
+                <li><a href="#sec2" class="menu2">Ikiteitandayona</a></li>
+                <li><a href="#sec3" class="menu3">Kimi wa Rock Wo Kikanai</a></li>
+                <li><a href="#sec4" class="menu4">Marigold</a></li>
+            </ul>
+        </nav>
+        <div id="phone"><img src="aim/lp.png" width="150" height="auto"></div>
+        <div class="logo">
+            <div id="logo1"><img src="aim/1.jpg"></div>
+            <div id="logo2"><img src="aim/2.jpg"></div>
+            <div id="logo3"><img src="aim/3.jpg"></div>
+            <div id="logo4"><img src="aim/4.jpg"></div>
+        </div>
+        <div id="content">
+            <section id="sec1">
+                <header><h1>Aimyon</h1></header>
+                <article>
+                    <p>일본의 싱어송라이터</p>
+                </article>
+            </section>
+            <section id="sec2">
+                <header><h1>Ikiteitandayona</h1></header>
+                <article>
+                    <p>아이묭이 2016년 발표한 첫번째 싱글.<br> 1집 정규앨범 〈青春のエキサイトメント〉의 수록곡이다.</p>
+                </article>
+            </section>
+            <section id="sec3">
+                <header><h1>Kimi wa Rock Wo Kikanai</h1></header>
+                <article>
+                    <p>일본의 싱어송라이터 아이묭이 2017년 발표한 노래. 같은 제목의 3집 싱글 앨범 〈君はロックを聴かない〉의 타이틀 곡이자, 1집 정규 앨범 〈青春のエキサイトメント〉의 수록곡이다.<br>
+                        전국 42개 방송국에서 자체 차트 1위에 선정되어, 4년 3개월만에 최다 기록을 경신함으로써 아이묭의 메이저 히트 신호탄을 쏘아올린 곡이다.</p>
+                </article>
+            </section>
+            <section id="sec4">
+                <header><h1>Marigold</h1></header>
+                <article>
+                    <p>일본의 싱어송라이터 아이묭이 2018년 발표한 노래. 동명의 싱글 〈マリーゴールド〉구글 어플 CM송으로 타이업하였다.<br>
+                        Lemon과 더불어 2018년 JPOP 최대 히트곡이며, 이 곡으로 제69회 NHK 홍백가합전에 출연했다. 이는 아이묭의 첫 홍백가합전 출연이다.<br>
+                        뮤직비디오는 중국 상하이시에 있는 상하이영화촬영소(上海影视乐园)에서 촬영하였다. 2019년 7월 14일 10시경 유튜브 조회수 1억을 달성하였고, 2020년 8월 26일 조회수 2억을 달성하였다. 2023년에는 조회수 3억을 달성했다</p>
+                </article>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
